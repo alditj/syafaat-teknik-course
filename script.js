@@ -1,20 +1,34 @@
-let index = 0;
-const track = document.querySelector('.gallery-track');
-const slides = document.querySelectorAll('.gallery-track img');
-const total = slides.length;
+// ================= GALERI SLIDER =================
+const track = document.querySelector(".gallery-track");
+const slides = document.querySelectorAll(".gallery-track img");
+const prevBtn = document.querySelector(".prev");
+const nextBtn = document.querySelector(".next");
 
-function showSlide(n) {
-  index = (n + total) % total;
-  track.style.transform = `translateX(${-index * 100}%)`;
+let index = 0;
+const totalSlides = slides.length;
+const slideWidth = slides[0].offsetWidth + 20; 
+
+function showSlide() {
+  track.style.transform = `translateX(-${index * slideWidth}px)`;
 }
 
-document.querySelector('.next').addEventListener('click', () => showSlide(index + 1));
-document.querySelector('.prev').addEventListener('click', () => showSlide(index - 1));
+// Tombol next
+nextBtn.addEventListener("click", () => {
+  index++;
+  if (index >= totalSlides) index = 0;
+  showSlide();
+});
+
+// Tombol prev
+prevBtn.addEventListener("click", () => {
+  index--;
+  if (index < 0) index = totalSlides - 1;
+  showSlide();
+});
 
 // Auto play setiap 5 detik
 setInterval(() => {
-  showSlide(index + 1);
+  index++;
+  if (index >= totalSlides) index = 0;
+  showSlide();
 }, 5000);
-
-// Awal
-showSlide(0);
