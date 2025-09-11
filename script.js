@@ -32,3 +32,34 @@ setInterval(() => {
   if (index >= totalSlides) index = 0;
   showSlide();
 }, 5000);
+
+document.addEventListener("DOMContentLoaded", () => {
+  const hamburger = document.querySelector(".hamburger");
+  const navMenu = document.querySelector(".nav-menu");
+
+  if (hamburger && navMenu) {
+    // Klik hamburger toggle menu
+    hamburger.addEventListener("click", () => {
+      navMenu.classList.toggle("active");
+
+      const icon = hamburger.querySelector("i");
+      if (icon) {
+        icon.classList.toggle("fa-bars");
+        icon.classList.toggle("fa-times");
+      }
+    });
+
+    // Klik link -> menu tertutup
+    navMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        navMenu.classList.remove("active");
+
+        const icon = hamburger.querySelector("i");
+        if (icon) {
+          icon.classList.add("fa-bars");
+          icon.classList.remove("fa-times");
+        }
+      });
+    });
+  }
+});
