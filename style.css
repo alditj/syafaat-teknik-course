@@ -106,21 +106,22 @@ body { font-family: Arial, sans-serif; line-height: 1.6; }
   }
 
   .nav-menu {
-    position: absolute;
+    position: fixed;
     top: 60px;
-    right: 0;
+    right: -220px;
     background: rgba(7, 94, 32, 0.95);
     flex-direction: column;
     width: 220px;
     padding: 15px;
     border-radius: 0 0 0 8px;
     z-index: 999;
+    transition: right 0.3s ease;
 
     display: none;
   }
 
   .nav-menu.active {
-    display: none;
+    right: 0;
   }
 
   .nav-menu li {
@@ -230,7 +231,7 @@ body { font-family: Arial, sans-serif; line-height: 1.6; }
 /* Program */
 .program-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 .card {
@@ -255,7 +256,7 @@ body { font-family: Arial, sans-serif; line-height: 1.6; }
 /* Curriculum */
 .curriculum-cards {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(2, 1fr);
   gap: 20px;
 }
 .curriculum-block {
@@ -289,7 +290,7 @@ body { font-family: Arial, sans-serif; line-height: 1.6; }
   line-height: 1.5;
 }
 .materi-list li::before {
-  content: "✔";
+  content: "";
   position: absolute;
   left: 0;
   color: #b71c1c;
