@@ -108,7 +108,7 @@ body { font-family: Arial, sans-serif; line-height: 1.6; }
   .nav-menu {
     position: fixed;
     top: 60px;
-    left: -100%;
+    right: 100%;
     background: rgba(7, 94, 32, 0.95);
     flex-direction: column;
     width: 220px;
@@ -122,7 +122,7 @@ body { font-family: Arial, sans-serif; line-height: 1.6; }
   }
 
   .nav-menu.active {
-    left: 0;
+    right: 0;
   }
 
   .nav-menu li {
