@@ -370,7 +370,7 @@ footer {
   font-weight: bold;
 }
 
-/* Tombol close (X) */
+/* Tombol close (X) modern */
 #close-chatbot {
   background: rgba(255, 255, 255, 0.2);
   border: none;
@@ -456,13 +456,13 @@ footer {
 #chatbot-form button {
   margin-top: 10px;
   padding: 10px;
-  background: #075E20;
+  background: #4a4de7;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-#chatbot-form button:hover { background: #064a19; }
+#chatbot-form button:hover { background: #3638c5; }
 
 /* Quick Replies */
 .quick-replies {
