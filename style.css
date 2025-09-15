@@ -411,13 +411,13 @@ footer {
 .chatbot-footer button {
   margin-left: 5px;
   padding: 5px 10px;
-  background: #007bff;
+  background: #075E20;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-.chatbot-footer button:hover { background: #0056b3; }
+.chatbot-footer button:hover { background: #064a19; }
 
 /* Chat messages */
 .bot-message, .user-message {
@@ -456,13 +456,13 @@ footer {
 #chatbot-form button {
   margin-top: 10px;
   padding: 10px;
-  background: #4a4de7;
+  background: #075E20;
   color: white;
   border: none;
   border-radius: 5px;
   cursor: pointer;
 }
-#chatbot-form button:hover { background: #3638c5; }
+#chatbot-form button:hover { background: #064a19; }
 
 /* Quick Replies */
 .quick-replies {
