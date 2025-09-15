@@ -331,6 +331,41 @@
   <a href="https://wa.me/6285860470987" class="whatsapp-float" target="_blank">
     <i class="fab fa-whatsapp"></i>
   </a>
+  <!-- Floating Chatbot Button -->
+  <div id="chatbot-button">
+    <i class="fas fa-comments"></i>
+  </div>
+
+  <!-- Chatbot Window -->
+  <div id="chatbot-window" class="hidden">
+    <div class="chatbot-header">
+      <h4>syafaat teknik course</h4>
+      <button id="close-chatbot">&times;</button>
+    </div>
+
+    <!-- FORM INPUT -->
+    <div id="chatbot-form" class="chatbot-body">
+      <p><b>Start Chatting</b><br>Talk to our online agent</p>
+      <input type="text" id="name-input" placeholder="Enter your name">
+      <input type="text" id="phone-input" placeholder="62xx xxxx xxxx">
+      <button id="start-chat">Start Chat</button>
+    </div>
+
+    <!-- CHAT AREA -->
+    <div id="chatbot-chat" class="chatbot-body hidden">
+      <div class="bot-message">Halo! Ada yang bisa saya bantu?</div>
+      <div class="quick-replies">
+        <button class="quick-btn" data-option="program">Lihat Program Pelatihan</button>
+        <button class="quick-btn" data-option="biaya">Biaya Pendaftaran</button>
+        <button class="quick-btn" data-option="daftar">Cara Mendaftar</button>
+      </div>
+    </div>
+
+    <div class="chatbot-footer hidden" id="chatbot-footer">
+      <input type="text" id="chatbot-input" placeholder="Ketik pesan Anda...">
+      <button id="send-chatbot"><i class="fas fa-paper-plane"></i></button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>
