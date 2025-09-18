@@ -94,16 +94,30 @@ const sendChatbot = document.getElementById("send-chatbot");
 let userName = "";
 let userPhone = "";
 
+const errorMsg = document.getElementById("chatbot-error");
+
 // Klik "Start Chat"
 startChatBtn.addEventListener("click", () => {
   userName = nameInput.value.trim();
   userPhone = phoneInput.value.trim();
 
+  // Reset pesan error
+  errorMsg.innerText = "";
+
+  // Validasi nama dan nomor HP
   if (!userName || !userPhone) {
-    alert("Harap isi nama dan nomor HP");
+    errorMsg.innerText = "Harap isi nama dan nomor HP";
     return;
   }
 
+  // Validasi nomor HP (08xx..., hanya angka, panjang 10-13 digit)
+  const phoneRegex = /^08\d{8,11}$/;
+  if (!phoneRegex.test(userPhone)) {
+    errorMsg.innerText = "Nomor HP harus diawali 08 dan terdiri dari 10-13 digit angka";
+    return;
+  }
+
+  // Jika valid
   chatbotForm.classList.add("hidden");
   chatbotChat.classList.remove("hidden");
   chatbotFooter.classList.remove("hidden");
