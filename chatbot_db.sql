@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 17 Sep 2025 pada 14.27
+-- Waktu pembuatan: 18 Sep 2025 pada 04.38
 -- Versi server: 10.4.32-MariaDB
 -- Versi PHP: 8.2.12
 
@@ -437,6 +437,15 @@ ALTER TABLE `faq`
 --
 ALTER TABLE `log_chat`
   MODIFY `id_chat` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=167;
+
+DELIMITER $$
+--
+-- Event
+--
+CREATE DEFINER=`root`@`localhost` EVENT `hapus_log_chat` ON SCHEDULE EVERY 1 DAY STARTS '2025-09-18 09:33:46' ON COMPLETION NOT PRESERVE ENABLE DO DELETE FROM log_chat
+  WHERE waktu_chat < NOW() - INTERVAL 1 YEAR$$
+
+DELIMITER ;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
