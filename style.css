@@ -197,15 +197,40 @@ body { font-family: Arial, sans-serif; line-height: 1.6; }
   border-radius: 12px;
   box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
-.about .text {
-  padding: 20px;
-  line-height: 1.8;
-  font-size: 1.05rem;
-  max-width: 600px;
+
+.keunggulan-checklist {
+  list-style: none; /* Hilangkan bullet default */
+  padding-left: 0;
+  margin-top: 15px;
 }
-.about .text h2 {
-  margin-bottom: 20px;
-  color: #075E20;
+
+.keunggulan-checklist li {
+  position: relative;
+  padding: 10px 15px 10px 40px; /* Jarak untuk penanda */
+  margin-bottom: 10px;
+  line-height: 1.6;
+  font-size: 1.05rem;
+  background: #fff; /* Latar putih untuk setiap item */
+  border-radius: 6px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1); /* Sedikit bayangan */
+  transition: transform 0.2s;
+}
+
+.keunggulan-checklist li:hover {
+  transform: translateX(5px); /* Efek visual saat di-hover */
+  background: #f1f8f4;
+}
+
+.keunggulan-checklist li::before {
+  content: "\f058"; /* Menggunakan Font Awesome check-circle (Pastikan FA dimuat) */
+  font-family: "Font Awesome 6 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #075E20; /* Warna hijau tema */
+  font-size: 1.3rem;
 }
 
 /* Fasilitas */
