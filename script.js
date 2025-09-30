@@ -1,4 +1,4 @@
-// ================= GALERI SLIDER =================
+// Galeri slideshow
 const track = document.querySelector(".gallery-track");
 const slides = document.querySelectorAll(".gallery-track img");
 const prevBtn = document.querySelector(".prev");
@@ -64,7 +64,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
-// ================= CHATBOT TOGGLE =================
+// ChatBot toggle
 const chatbotButton = document.getElementById("chatbot-button");
 const chatbotWindow = document.getElementById("chatbot-window");
 const closeChatbot = document.getElementById("close-chatbot");
@@ -80,7 +80,7 @@ if (closeChatbot) {
   });
 }
 
-// ================= CHATBOT FORM & MENU =================
+// ChatBot - from - menu
 const chatbotForm = document.getElementById("chatbot-form");
 const chatbotChat = document.getElementById("chatbot-chat");
 const chatbotFooter = document.getElementById("chatbot-footer");
@@ -158,9 +158,9 @@ function addMessage(text, sender) {
   chatbotChat.scrollTop = chatbotChat.scrollHeight;
 }
 
-// Kirim ke backend Python Flask
+// Kirim ke backend PHP
 function processFAQ(message) {
-  fetch("http://127.0.0.1:5000/chat", {
+  fetch("chat.php", {  // Ganti URL dengan lokasi file chat.php di hosting Anda
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -171,14 +171,12 @@ function processFAQ(message) {
   })
     .then(res => res.json())
     .then(data => {
-      if (data.reply) {
-        addMessage(data.reply, "bot");
-      } else {
-        addMessage("Ups, terjadi kesalahan: " + (data.error || "Tidak diketahui"), "bot");
-      }
+      // Memastikan response key yang diterima dari PHP adalah 'reply'
+      addMessage(data.reply, "bot"); 
+      // ...
     })
-    .catch(err => {
-      console.error("Error:", err);
-      addMessage("Ups, server tidak bisa dihubungi.", "bot");
+    .catch(error => {
+      console.error("Error:", error);
+      addMessage("Terjadi kesalahan saat menghubungi server.", "bot");
     });
 }
