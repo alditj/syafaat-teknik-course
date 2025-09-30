@@ -22,7 +22,7 @@ $data = json_decode(file_get_contents('php://input'), true);
 $user_message = isset($data['message']) ? strtolower(trim($data['message'])) : "";
 $user_name = isset($data['name']) ? $data['name'] : "Guest";
 $user_phone = isset($data['phone']) ? $data['phone'] : "-";
-$current_time = date('Y-m-d H:i:s');
+$current_timestamp = date('Y-m-d H:i:s');
 $bot_reply = "Maaf, saya belum punya jawaban untuk pertanyaan itu, Silahkan hubungi kami lewat whatsapp untuk informasi lebih lanjut.";
 
 // Cek apakah pesan kosong
