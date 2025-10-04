@@ -118,7 +118,7 @@ body { font-family: Arial, sans-serif; line-height: 1.6; }
 /* Hero */
 .hero {
   height: 100vh;
-  background: url("images/foto1.jpeg") no-repeat center center/cover;
+  background: url("images/hero.jpg") no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -566,3 +566,4 @@ footer {
   .about img { height: 300px; }
   .card img { height: 200px; }
 }
+
