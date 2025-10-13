@@ -160,7 +160,7 @@ function addMessage(text, sender) {
 
 // Kirim ke backend PHP
 function processFAQ(message) {
-  fetch("chat.php", {  // Ganti URL dengan lokasi file chat.php di hosting Anda
+  fetch("bot.php", {  // Ganti URL dengan lokasi file chat.php di hosting Anda
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
@@ -179,4 +179,30 @@ function processFAQ(message) {
       console.error("Error:", error);
       addMessage("Terjadi kesalahan saat menghubungi server.", "bot");
     });
+
+/*
+// Kirim ke backend Flask
+function processFAQ(message) {
+  fetch("http://127.0.0.1:5000/chat", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({
+      message: message,
+      name: userName,
+      phone: userPhone
+    })
+  })
+    .then(res => res.json())
+    .then(data => {
+      if (data.reply) {
+        addMessage(data.reply, "bot");
+      } else {
+        addMessage("Ups, terjadi kesalahan: " + (data.error || "Tidak diketahui"), "bot");
+      }
+    })
+    .catch(err => {
+      console.error("Error:", err);
+      addMessage("Ups, server tidak bisa dihubungi.", "bot");
+    });
+*/
 }
